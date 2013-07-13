@@ -24,9 +24,12 @@ function firstandlast10clip(clip c)
 	return c.first10clip().last10clip()
 }
 
-function seconds(int minutes, int seconds)
+function seconds(int minutes, int seconds, int "framerate_in")
 {
-	return (60 * minutes) + seconds
+	# Check the argument for framerate, if not passed, default to 30fps
+	framerate = isint(framerate_in) ? framerate_in : 30
+
+	return ((60 * minutes) + seconds)*30
 }
 
 function paint10(clip c1, clip c2, string type)
