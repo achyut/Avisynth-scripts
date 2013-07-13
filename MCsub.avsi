@@ -16,6 +16,7 @@ function MCsub(clip c, string text, int "start_in", int "end_in")
 	start = isint(start_in) ? start_in : 0
 	end = isint(end_in) ? end_in : c.framecount
 
+	#Subtitle the clip twice. The first acts as the drop shadow.
 	return c\
 		.SubtitleEX(text, (c.width/2)+5, -90, start, end, "Minecrafter 3 Regular", "cf(10,10)sss", 40, $00000000)\
 		.SubtitleEX(text, c.width/2, -95, start, end, "Minecrafter 3 Regular", "cf(10,10)", 40)
